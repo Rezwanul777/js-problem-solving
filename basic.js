@@ -308,7 +308,7 @@ function printer(numberLimit) {
 
             // find the largest element of an array
             
-  const numbers = [23,44,56,67,89,2]
+  /*const numbers = [23,44,56,67,89,2]
     function largeNumber(numbers){
       let  largest =numbers[0]
         for (let i = 0; i<numbers.length; i++) {
@@ -322,6 +322,141 @@ function printer(numberLimit) {
     }
 
     const largestResult=largeNumber(numbers)
-    console.log(largestResult);
+    console.log(largestResult);*/
+
+    // Remove Duplicate items in an array
+
+    const names =['abul','jobbar','kabul','jobbar','koko','boka','kabul']
+
+    function duplicateItems(names){
+        let unique =[]
+        for (const element of names) {
+            //console.log(element);
+            if(unique.indexOf(element) == -1){
+                unique.push(element)
+            }
+        }
+        return unique;
+    }
+
+    const duplicateResult=duplicateItems(names)
+    //console.log(duplicateResult);
+
+    // reverse string
+    const text = "hello prince"
+    function reverseString(text){
+        let reverse = ''
+        for (const letter of text){
+            reverse=letter+reverse
+        }
+        return reverse
+    }
+
+    const reverseResult=reverseString(text)
+    //console.log(reverseResult);
+
+    //write 'foo','bar','foobar' if divisable by 3 or 5 0r both----
+
+   /* function divisableNumber(number){
+        for(let i =1; i<=30; i++){
+            if(i%3==0 && i%5==0){
+                console.log('foobar');
+            }else if(i%5==0){
+                console.log('bar');
+            }else if(i%3==0){
+                console.log('foo');
+            }else{
+                console.log(i);
+            }
+        } 
+       
+    }
+
+    divisableNumber(30);*/
+
+    // calculate the total price in shopping Cart
+
+        const cart=[
+            {name :'laptop',price:55000,quantity:1},
+            {name :'watch',price:4500,quantity:2},
+            {name :'shirt',price:5000,quantity:4},
+            {name :'pant',price:5500,quantity:2}
+        
+        ]
+
+        function cartPrice(cart){
+            let cartTotal=0
+            for (const product of cart) {
+                //console.log(product);
+                let productTotal = product.price * product.quantity;
+                cartTotal+= productTotal;
+            }
+            return cartTotal
+        }
+
+       let totalPrice=cartPrice(cart)
+       //console.log(totalPrice);
+
+       // check is where the number is positive or negative?
+
+        function isPositive(number){
+            let result;
+            if(number>0){
+                result='positive'
+            }else {
+                result="negative"
+            }
+            return result
+        }
+
+        const finalResult=isPositive(-5)
+        //console.log(finalResult);
+
+        // print all even number between 1-20
+
+       /* function printEven(){
+            for(let i=1;i<=20;i++){
+                if(i%2==0){
+                    console.log(i);
+                }
+            }
+        }
+
+        printEven()*/
+
+
+        // count numbers divisable by 3 from 1 to 20
+           /* function countNumber(){
+                let count =0;
+                for (let i = 1; i <=20; i++) {
+                   if(i%3==0){
+                    count++
+                   }
+                    
+                }
+                return count;
+            }
+
+            const countNumberResult=countNumber()
+            console.log(countNumberResult);*/
+
+            // claculate the average of all numbers that divisibale by 3 between 1-n.
+
+            function averageNum(n){
+                let sum =0; 
+                let count=0;
+                for (let i = 1; i < n; i++) {
+                   if(i%3==0){
+                    sum=sum+i;
+                    count++;
+                   }
+                    
+                }
+                let average =sum/count;
+                return average;
+            }
+
+            const averageResult=averageNum(50);
+            console.log(Math.round(averageResult));
 
 
