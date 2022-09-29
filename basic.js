@@ -457,6 +457,93 @@ function printer(numberLimit) {
             }
 
             const averageResult=averageNum(50);
-            console.log(Math.round(averageResult));
+           // console.log(Math.round(averageResult));
 
 
+        // Count the number of vowels in a string--------------------------------------------
+
+    function countVowel(sentence){
+  
+    let count = 0;
+    let vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+    
+    for(const letter of sentence){
+      // let letter = sentence[i].toLowerCase();
+      if(vowels.indexOf(letter) > -1){
+        count = count + 1;
+      }
+    }
+    return count;
+  
+  }
+  
+  let string = "Quick brown fox jumps over the lazy dog";
+  //console.log(countVowel(string));
+
+
+  // Mular dam-------------------------------------------------
+// For first 2 kg - 30 tk per kg
+// For more than 2 kg - 25 tk per kg
+// write a function to calculate total price based on given quantity. + handle errors
+
+  function mularDam(quantity){
+    // error validation
+    if(typeof quantity !="number"){
+        return 'please enter valid number'
+    }
+    else if( quantity <= 0){
+        return 'please enter valid number'
+    }
+    else if( quantity > 20){
+        return 'please buy less than 20 kg'
+    }
+
+    let price=0;
+    if(quantity<=2){
+        price = quantity * 30;
+    }else
+    {
+        price = quantity * 25
+    }
+    return price;
+  }
+
+  //console.log(mularDam(2));
+
+  // find if anybody got A+ from your friends
+
+  let marks=[78,66,81,72,89]
+
+  function cgpaMarks(marks){
+    for (let i = 0; i< marks.length; i++) {
+      const element = marks[i];
+      if(element >= 80){
+        return true
+      }
+       
+    }
+    return false
+  }
+
+  //console.log(cgpaMarks([81]))
+
+  // Find the second largest element of an array
+
+  function secondLargest(arr){
+    let largest=arr[0];
+    let secondLargest=arr[0]
+    for (let i = 0; i < arr.length; i++) {
+        const element = arr[i];
+        if(element>largest){
+            secondLargest=largest
+            largest=element
+        } else if(element>secondLargest){
+            secondLargest=element;
+        }
+        
+    }
+    return secondLargest
+  }
+
+  let arr=[45,42,56,67,78,65]
+  console.log(secondLargest(arr));
